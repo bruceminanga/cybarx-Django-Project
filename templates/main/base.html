@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+ 	<div id="gradBgn">
+	  <div class="position-relative">
+	    <div class="d-flex justify-content-between p-3 align-items-center position-fixed w-100">
+	      <div>
+	        <img src="/static_files/images/logos/htmlWhiteLogo.png" alt="Company Logo" height="48">
+	      </div>
+	      <div>
+	        <div class="d-flex position-relative">
+	          <div class="d-none d-sm-block"><a href="#" class="custom-link">About</a></div>
+	          <div class="d-none d-sm-block">
+	            <a href="#" class="custom-link">Pages <i class="ms-1 gg-chevron-down"></i></a>
+	          </div>
+	          <div id="subMenu">
+	            <span class="hamLine"></span>
+	            <span class="hamLine"></span>
+	            <span class="hamLine"></span>
+	          </div>
+	          <div id="fullPageMenu" class="visually-hidden">
+	            <div class="anton d-flex align-items-center position-fixed vh-100 w-100 start-0 top-0 blurOverlay">
+	              <div class="container">
+	                <div class="display-1"><a href="#" class="custom-link">About</a></div>
+	                <div class="display-1"><a href="#" class="custom-link">Services</a></div>
+	                <div class="display-1"><a href="#" class="custom-link">Contact</a></div>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="p-4 start-0 top-0 position-fixed vh-100 align-items-center d-none d-md-flex" >
+	            <div class="openSans">
+	              <div class="selected sideLink ms-3 my-3"><span class="avatar">H</span> Home</div>
+	              <div class="sideLink ms-3 my-3"><span class="avatar">G</span> Utilities</div>
+	              <div class="sideLink ms-3 my-3"><span class="avatar">C</span> Blog</div>
+	              <div class="sideLink ms-3 my-3"><span class="avatar">C</span> Contact</div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+<script src="{% static 'js/app.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+		
+		<script>
+		var subMenu = document.getElementById('subMenu')
+		var fullPageMenu = document.getElementById('fullPageMenu')
+		subMenu.addEventListener('click',function(){
+			if(subMenu.className === 'menuClicked') {
+				subMenu.className = ""
+				setTimeout(function(){fullPageMenu.className = "visually-hidden"},200)
+			}else{
+				subMenu.className = 'menuClicked'
+				fullPageMenu.className = "slideRight"
+			}
+		})
+	</script>
+
+	</body>
+</html>
